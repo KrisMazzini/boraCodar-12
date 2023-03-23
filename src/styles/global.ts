@@ -12,7 +12,17 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     body {
+        min-height: 100vh;
+        background-color: ${(props) => props.theme['purple-500']};
+    }
+    
+    body, a, button, input {
+        font-family: 'Inter', sans-serif;
         font-weight: 500;
         font-size: 1.6rem;
+    }
+
+    a {
+        text-decoration: none;
     }
 `
