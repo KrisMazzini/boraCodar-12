@@ -2,8 +2,7 @@ import styled from 'styled-components'
 
 export const Container = styled.header`
   height: 100%;
-  width: 17.5rem;
-  padding: 3.2rem 0 3.2rem 3.5rem;
+  padding: 3.2rem 2.7rem 3.2rem 3.5rem;
 `
 
 export const Logo = styled.img`

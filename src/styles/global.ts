@@ -12,7 +12,7 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     body {
-        min-height: 100vh;
+        height: 100vh;
         background-color: ${(props) => props.theme['purple-500']};
     }
     
