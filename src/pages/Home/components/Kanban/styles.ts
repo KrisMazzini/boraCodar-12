@@ -6,7 +6,7 @@ export const Container = styled.div`
 
   display: flex;
   align-items: flex-start;
-  gap: 4.8rem;
+  gap: 2.4rem;
 
   ::-webkit-scrollbar {
     height: 4px;
@@ -17,5 +17,9 @@ export const Container = styled.div`
       background-color: ${(props) => props.theme['gray-500']};
       border-radius: 999px;
     }
+  }
+
+  @media (min-width: 1024px) {
+    gap: 4.8rem;
   }
 `

@@ -13,4 +13,14 @@ export const Container = styled.li<ContainerProps>`
     color: ${(props) =>
       props.active ? props.theme.white : props.theme['purple-300']};
   }
+
+  span {
+    display: none;
+  }
+
+  @media (min-width: 672px) {
+    span {
+      display: initial;
+    }
+  }
 `

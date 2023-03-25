@@ -13,7 +13,12 @@ export const Logo = styled.img`
 export const NavList = styled.ul`
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 3.6rem;
 
   list-style-type: none;
+
+  @media (min-width: 672px) {
+    align-items: initial;
+  }
 `

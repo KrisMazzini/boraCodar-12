@@ -5,6 +5,7 @@ export const Container = styled.div`
 `
 
 export const Main = styled.main`
+  min-width: 43.2rem;
   width: 100%;
   height: calc(100vh - 0.4rem);
 
