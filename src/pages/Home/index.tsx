@@ -55,7 +55,7 @@ export function Home() {
       id: uuidv4(),
       title: '#boraCodar uma página de login 🧑‍💻',
       description:
-        'Novo desafio do #boraCodar da Rocketseat, onde é proposto construir um quadro de Kanban.',
+        'Novo desafio do #boraCodar da Rocketseat, onde é proposto construir uma página de login.',
       tags: ['rocketseat', 'desafio'],
       status: 'done',
     },
@@ -63,7 +63,7 @@ export function Home() {
       id: uuidv4(),
       title: '#boraCodar uma página de clima 🧑‍💻',
       description:
-        'Novo desafio do #boraCodar da Rocketseat, onde é proposto construir um quadro de Kanban.',
+        'Novo desafio do #boraCodar da Rocketseat, onde é proposto construir uma página de clima.',
       tags: ['rocketseat', 'desafio'],
       status: 'done',
     },
@@ -71,7 +71,7 @@ export function Home() {
       id: uuidv4(),
       title: '#boraCodar um conversor 🧑‍💻',
       description:
-        'Novo desafio do #boraCodar da Rocketseat, onde é proposto construir um quadro de Kanban.',
+        'Novo desafio do #boraCodar da Rocketseat, onde é proposto construir um conversor de moedas.',
       tags: ['rocketseat', 'desafio'],
       status: 'done',
     },
