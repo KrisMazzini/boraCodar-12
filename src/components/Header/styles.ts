@@ -1,8 +1,25 @@
 import styled from 'styled-components'
 
 export const Container = styled.header`
-  height: 100%;
+  height: 100vh;
   padding: 3.2rem 2.7rem 3.2rem 3.5rem;
+
+  overflow-y: auto;
+
+  transform: rotateY(180deg);
+
+  > * {
+    transform: rotateY(-180deg);
+  }
+
+  ::-webkit-scrollbar {
+    width: 2px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: ${(props) => props.theme['purple-100']};
+    border-radius: 999px;
+  }
 `
 
 export const Logo = styled.img`
