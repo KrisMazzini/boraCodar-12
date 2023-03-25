@@ -1,15 +1,22 @@
+import { DragEvent } from 'react'
+
 import { Container, TagsWrapper } from './styles'
 import { Tag } from '../Tag'
 
-interface CardProps {
+export interface CardProps {
   title: string
   description: string
   tags?: string[]
+  id: string
 }
 
-export function Card({ title, description, tags }: CardProps) {
+export function Card({ title, description, tags, id }: CardProps) {
+  function handleDragStart(event: DragEvent<HTMLDivElement>) {
+    event.dataTransfer.setData('text/plain', id)
+  }
+
   return (
-    <Container>
+    <Container draggable onDragStart={handleDragStart}>
       <h4>{title}</h4>
       <p>{description}</p>
       <TagsWrapper>

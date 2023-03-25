@@ -1,10 +1,13 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
+  width: 37rem;
   height: 100%;
 
   display: flex;
   flex-direction: column;
+
+  border-radius: 8px 8px 0 0;
 
   h3 {
     padding: 2.4rem;
@@ -15,6 +18,11 @@ export const Container = styled.div`
 
     text-transform: capitalize;
   }
+`
+
+export const DraggedOverContainer = styled(Container)`
+  background-color: ${(props) => props.theme['purple-100']};
+  filter: brightness(0.9);
 `
 
 export const CardsWrapper = styled.div`
