@@ -9,11 +9,26 @@ export interface TaskType extends CardProps {
 
 interface KanbanProps {
   tasks: TaskType[]
-  changeTaskStatus: (changingTaskId: string, newStatus: StatusType) => void
+  handleSetTasks: (tasks: TaskType[]) => void
 }
 
-export function Kanban({ tasks, changeTaskStatus }: KanbanProps) {
+export function Kanban({ tasks, handleSetTasks }: KanbanProps) {
   const statusList: StatusType[] = ['to-do', 'doing', 'done']
+
+  function handleChangeTaskStatus(
+    changingTaskId: string,
+    newStatus: StatusType,
+  ) {
+    const updatedTasks = tasks.map((task) => {
+      if (task.id === changingTaskId) {
+        return { ...task, status: newStatus }
+      }
+
+      return task
+    })
+
+    handleSetTasks(updatedTasks)
+  }
 
   return (
     <Container>
@@ -22,7 +37,7 @@ export function Kanban({ tasks, changeTaskStatus }: KanbanProps) {
           <CardList
             status={status}
             key={status}
-            handleUpdateTask={changeTaskStatus}
+            handleUpdateTask={handleChangeTaskStatus}
           >
             {tasks
               .filter((task) => task.status === status)
