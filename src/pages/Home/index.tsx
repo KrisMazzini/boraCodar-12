@@ -8,6 +8,7 @@ import { Container } from './styles'
 import { Filter } from './components/Filter'
 import { Header } from './components/Header'
 import { Kanban, TaskType } from './components/Kanban'
+import { StatusType } from '../../components/CardList'
 
 export function Home() {
   const [tasks, setTasks] = useState<TaskType[]>([
@@ -81,8 +82,19 @@ export function Home() {
 
   const filteredTasks = tasks.filter(filterTasks)
 
-  function handleSetTasks(newTasks: TaskType[]) {
-    setTasks(newTasks)
+  function changeTaskStatus(
+    changingTaskId: string,
+    newStatus: StatusType,
+  ) {
+    const updatedTasks = tasks.map((task) => {
+      if (task.id === changingTaskId) {
+        return { ...task, status: newStatus }
+      }
+
+      return task
+    })
+
+    setTasks(updatedTasks)
   }
 
   function filterTasks(task: TaskType) {
@@ -101,7 +113,7 @@ export function Home() {
         value={filter}
         setValue={(newValue: string) => setFilter(newValue)}
       />
-      <Kanban tasks={filteredTasks} handleSetTasks={handleSetTasks} />
+      <Kanban tasks={filteredTasks} changeTaskStatus={changeTaskStatus} />
     </Container>
   )
 }
